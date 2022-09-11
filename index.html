@@ -32,12 +32,25 @@
                 return <h1>{ title ? title: 'Default title' }</h1>;
             }
 
+            function NameList() {
+                const names = ["LiMing", "wang ma zi", "zhang san"];
+                return <ul>
+                            {
+                                names.map(
+                                    (name) => (
+                                        <li key={name}> { name } </li>
+                                    )
+                                )
+                            }
+                        </ul>;
+            }
+
             function HomePage() {
                 return (
                     <div>
                         <Header title="React 💙" />
                         <Header1 title="React 💙 1" />
-                        <Header2 />
+                        <NameList />
                     </div>
                 );
             }
