@@ -9,12 +9,22 @@
         <script type="text/jsx">
             const app = document.getElementById("app");
 
-            ReactDOM.render(<h1>Dev, preview, ship</h1>, app);
+            function Header({ title }) {
+                console.log(title);
+                return <h1>{ title }</h1>;
+            }
 
-            // const header = document.createElement("h1");
-            // const headerContent = document.createTextNode("Dev, preview, ship");
-            // header.appendChild(headerContent);
-            // app.appendChild(header);
+            function HomePage() {
+                return (
+                    <div>
+                        <Header title="React 💙" />
+                    </div>
+                );
+            }
+
+            ReactDOM.render(<HomePage />, app);
+
+            
         </script>
     </body>
 </html>
