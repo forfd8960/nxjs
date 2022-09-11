@@ -9,15 +9,35 @@
         <script type="text/jsx">
             const app = document.getElementById("app");
 
-            function Header({ title }) {
-                console.log(title);
-                return <h1>{ title }</h1>;
+            function createTitle(title) {
+                if (title) {
+                    return title;
+                }
+
+                return 'Default title';
+            }
+
+            function Header(props) {
+                console.log(props.title);
+                return <h1>{ props.title }</h1>;
+            }
+
+            function Header1({ title }) {
+                console.log("header1: " + title);
+                return <h1>{ createTitle(title) }</h1>;
+            }
+
+            function Header2({ title }) {
+                console.log("header2: " + title);
+                return <h1>{ title ? title: 'Default title' }</h1>;
             }
 
             function HomePage() {
                 return (
                     <div>
                         <Header title="React 💙" />
+                        <Header1 title="React 💙 1" />
+                        <Header2 />
                     </div>
                 );
             }
